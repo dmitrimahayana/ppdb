@@ -1,0 +1,213 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+div#header {
+	background-color:rgb(220, 234, 244);
+	width:1080px;
+	height:200px;
+	margin:0px auto auto auto;
+}
+
+div#header-logo1 {
+	background-color:rgb(220, 234, 244);
+	height:20px;
+	margin:0px auto auto auto;
+}
+
+div#header-logo2 {
+	background-color:white;
+	width:1040px;
+	height:160px;
+	margin:0px auto auto auto;
+}
+
+div#batas {
+	width:5px;
+	border-radius:15px;
+	background-color:blue;
+	float:left;
+	margin-top: 30px;
+	height:100px;
+}
+
+div#logo-container {
+	height : 160px;
+	width : 810px;
+	margin : auto;
+}
+
+div#nav {
+	height : 40px;
+	width: 1040px;
+	background-color: rgb(220, 234, 244);
+
+}
+
+div#sidebar {
+	width:350px;
+	background-color:;
+	height:600px;
+	position:fixed;
+}
+
+div.contain-foot {
+	width:1366px;
+	margin:10px auto auto auto;
+}
+
+div.menu:hover,
+div.menu:focus {
+	text-decoration: none;
+
+	background-color: rgb(0, 127, 255);
+}
+
+div.menu:hover a {
+	color : rgb(255,255,255);
+}
+
+div.nav-menu {
+	border-top:1px solid #dddddd;
+	text-align: right;
+}
+
+.back1 {
+	background-color: rgb(187, 216, 233);
+}
+
+.back2 {
+	background-color : rgb(220, 234, 244);
+}
+
+.footer {
+	height: 40px;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.auto {
+	margin : auto;
+}
+
+.pad1 {
+	padding : 10px;
+}
+
+.pad2 {
+	padding-left: 10px;
+}
+
+.pad3 {
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+.pad4 {
+	padding-right: 15px;
+}
+
+div.logo {
+	float:left;
+	height:160px;
+	width:400px;
+}
+
+img.gambar {
+	height : 100px;
+	width : 100px;
+}
+
+p.foot {
+	margin : 100px 20px auto auto;
+}
+
+.margin1 {
+	margin-top :30px;
+}
+
+.margin2 {
+	margin-left:20px;
+}
+
+.isi {
+	margin-top : 20px;
+	width : 97%;
+	margin-right: 20px;
+	padding : 10px;
+}
+
+.isi1 {
+	border-bottom:3px solid;
+	border-color:#61C600;
+}
+
+.isi2 {
+	border-bottom:2px solid;
+	border-color:#61C600;
+
+}
+
+div#pilih {
+	float : right;
+	margin-top :70px;
+	margin-right : 10px;
+	border-bottom: 1px solid;
+	/*position: absolute;*/
+}
+
+div#content {
+	float:right;
+	width:100%;
+}
+
+table.table1 {
+	width : 95%;
+}
+
+table.table2 {
+	width : 45%;
+	margin-top:10px;
+}
+
+table.table3 {
+	margin-top:20px;
+}
+
+.sidebar-nav-fixed {
+	padding : 9px 0;
+	position: fixed;
+	width: 22.5%;
+	/*width:350px;*/
+}
+
+.row-fluid > .span-fixed-sidebar {
+	margin-left : 800px;
+}
+
+div#sidegambar1 {
+	margin-top:5%;
+	margin-left:8%;
+	margin-right:2%;
+	/*float:left;
+	width:90%;
+	height: 90%;*/
+}
+
+div#sidegambar2 {
+	margin-top:10%;
+	margin-left:7%;
+	margin-right:5%;
+	float:left;
+	width:90%;
+	height: 90%;
+}
+
+.putih {
+	background-color:white;
+}

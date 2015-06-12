@@ -1,0 +1,105 @@
+<?php $this->load->helper('tglposisi_helper'); ?>
+	<div class="isi isi1">
+		<legend>Nomor Ujian Nasional</legend>
+		<form method="GET" action="<?php echo site_url('pendaftar/smpnnodaf') ?>" class="form-inline" style>
+		    <div class="control-group">
+		    	<div class="controls">
+		    		<input type="text" name="no_pendaftaran" id="no_pendaftaran" placeholder="nomor UN">
+		    		<button type="submit" class="btn"> Cek &raquo;</button>
+		    	</div>
+		    </div>
+		</form>
+	</div>
+
+
+	<div class="isi isi1">
+		<?php foreach ($query_datasiswa->result() as $row): ?>
+			<blockquote class="putih">
+				<legend>Info Calon Siswa SMP Negeri</legend>
+				<dl>
+					<dt><img src="<?php echo $this->config->item('base_url')?>static/img/faceless.gif" /></dt>
+				</dl>
+			</blockquote>
+				
+			<blockquote class="putih">
+				<legend>Biodata Siswa</legend>
+				<dl>
+					<dt>Nama :</dt>
+					<dd><?php echo $row->NAMA;?></dd>
+					<dt>Tanggal Lahir :</dt>
+					<dd><?php 
+						$date = date_create($row->TGL_LAHIR);
+						echo date_format($date, 'd/m/Y'); ?>
+					</dd>
+					<dt>Asal Sekolah :</dt>
+					<dd><?php echo $row->ASAL_SEKOLAH?></dd>
+
+				</dl>
+			</blockquote>
+			<blockquote class="putih">
+				<legend>Nilai Total</legend>
+				<dl>
+					<dt>Bahasa Indonesia :</dt>
+					<dd><?php echo $row->BIND?></dd>
+					<dt>Matematika:</dt>
+					<dd><?php echo $row->MAT?></dd>
+					<dt>Ilmu Pengetahuan Alam</dt>
+					<dd><?php echo $row->IPA?></dd>
+					<dt>&nbsp;</dt>
+					<dd>&nbsp;</dd>
+					<dt><b>Nilai Akhir</b></dt>
+					<dd><b><?php echo $row->NUN_ASLI?></b></dd>
+				</dl>
+			</blockquote>
+			<blockquote class="putih">
+				<legend>Pilihan Sekolah</legend>
+				<dl>
+					<dt>No.UN</dt>
+					<dd><?php echo $row->NO_UJIAN?></dd>
+					<dt>Pilihan Ke-1</dt>
+					<dd> <?php echo $this->sekolah_model->get_nama_sekolah( $row->PILIH1); ?> (<?php echo $row->PILIH1 ?>)</dd>
+					<dt>Pilihan Ke-2</dt>
+					<?php if ($row->PILIH2 > 0) { ?>
+					<dd> <?php echo $this->sekolah_model->get_nama_sekolah( $row->PILIH2); ?>  (<?php echo $row->PILIH2 ?>)</dd>
+					<?php } else { ?>
+					<dd>Tidak Memilih</dd>
+					<?php } ?>
+				</dl>
+			</blockquote>
+			<blockquote class="putih">
+				<legend>Hasil 
+					<?php if( strtotime(date("d F Y")) >= tanggal_final_1() ) : ?>
+						Final
+					<?php else : ?>
+						Sementara
+					<?php endif; ?>
+				</legend>
+				<dl>
+					<?php if ($row->DITERIMA== 0): ?>
+                                            <dd>&nbsp;</dd>
+                                            <dt>* Calon Siswa tidak diterima !</dt>
+					<?php else: ?>
+        				<dt>Diterima di</dt>
+					<?php  if ($tahap==1): ?>
+                                            <dd><?php echo $this->sekolah_model->get_nama_sekolah( $row->DITERIMA); ?> (<?php echo $row->DITERIMA ?>)</dd>
+                                            <dt>No Urut Rangking</dt>
+                                            <dd><?php echo $row->NO_URUT?> Pada <b><?php echo sementara_final_1();?></b></dd>
+					<?php endif; ?>
+					<?php if ($tahap==2):  ?>
+                                            <dd> <?php echo $this->sekolah_model->get_nama_sekolah( $row->DITERIMA); ?>(<?php echo $row->DITERIMA ?>)</dd>
+                                            <dt>No Urut Rangking</dt>
+                                            <dd><?php echo $row->NO_URUT ?> <!--Pada <b><?php echo sementara_final_2();?></b>--></dd>
+					<?php endif; ?>
+					<?php endif; ?>
+			</blockquote>
+				</dl>
+			<div class="message-box alert">
+				<?php if( strtotime(date("d F Y")) >= tanggal_final_1() ) : ?>
+					<p class="text-right"><strong>HASIL INI MERUPAKAN HASIL PERANKINGAN SELEKSI PPDB SIDOARJO FINAL TAHAP I</strong></p>
+				<?php else : ?>
+					<p class="text-right"><strong>HASIL INI MERUPAKAN HASIL PERANKINGAN SELEKSI PPDB SIDOARJO SEMENTARA TAHAP I</strong></p>
+				<?php endif; ?>
+            </div>
+
+		<?php endforeach;?>
+	</div>
